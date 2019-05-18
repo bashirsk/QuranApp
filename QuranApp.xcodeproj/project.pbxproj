@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6178F06C22905422009D505F /* Downloads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06A22905422009D505F /* Downloads.storyboard */; };
+		6178F06E22905441009D505F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06D22905441009D505F /* Search.storyboard */; };
+		6178F07122905479009D505F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06F22905479009D505F /* Settings.storyboard */; };
 		6194AF802290352600327D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194AF7F2290352600327D7D /* AppDelegate.swift */; };
 		6194AF852290352600327D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6194AF832290352600327D7D /* Main.storyboard */; };
 		6194AF872290352700327D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6194AF862290352700327D7D /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6178F06B22905422009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Downloads.storyboard; sourceTree = "<group>"; };
+		6178F06D22905441009D505F /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		6178F07022905479009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		6194AF7C2290352600327D7D /* QuranApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6194AF7F2290352600327D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6194AF842290352600327D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +58,9 @@
 		6178F0612290412B009D505F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6178F069229049C3009D505F /* Search */,
+				6178F068229049BD009D505F /* Downloads */,
+				6178F067229049B5009D505F /* Home */,
 				6178F0622290413D009D505F /* Settings */,
 			);
 			path = UI;
@@ -60,6 +69,7 @@
 		6178F0622290413D009D505F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				6178F06F22905479009D505F /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -90,6 +100,30 @@
 			children = (
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		6178F067229049B5009D505F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6178F068229049BD009D505F /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				6178F06A22905422009D505F /* Downloads.storyboard */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
+		6178F069229049C3009D505F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6178F06D22905441009D505F /* Search.storyboard */,
+			);
+			name = Search;
+			path = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		6194AF732290352600327D7D = {
@@ -185,7 +219,10 @@
 			files = (
 				6194AF8A2290352700327D7D /* LaunchScreen.storyboard in Resources */,
 				6194AF872290352700327D7D /* Assets.xcassets in Resources */,
+				6178F06C22905422009D505F /* Downloads.storyboard in Resources */,
+				6178F07122905479009D505F /* Settings.storyboard in Resources */,
 				6194AF852290352600327D7D /* Main.storyboard in Resources */,
+				6178F06E22905441009D505F /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +240,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6178F06A22905422009D505F /* Downloads.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6178F06B22905422009D505F /* Base */,
+			);
+			name = Downloads.storyboard;
+			sourceTree = "<group>";
+		};
+		6178F06F22905479009D505F /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6178F07022905479009D505F /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
 		6194AF832290352600327D7D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
