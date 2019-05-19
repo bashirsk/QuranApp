@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GDM-Vq-5Ih" customClass="ActivityOverlay" customModule="QuranApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3m2-E6-ran">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZI0-hz-1Lt">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZI0-hz-1Lt" firstAttribute="centerY" secondItem="GDM-Vq-5Ih" secondAttribute="centerY" id="9Hl-bK-VhJ"/>
+                <constraint firstItem="3m2-E6-ran" firstAttribute="leading" secondItem="Dpu-nv-fQC" secondAttribute="leading" id="9qw-lO-vsD"/>
+                <constraint firstItem="3m2-E6-ran" firstAttribute="top" secondItem="Dpu-nv-fQC" secondAttribute="top" id="QuZ-rI-Kor"/>
+                <constraint firstItem="ZI0-hz-1Lt" firstAttribute="centerX" secondItem="GDM-Vq-5Ih" secondAttribute="centerX" id="S3Q-LS-pxN"/>
+                <constraint firstItem="Dpu-nv-fQC" firstAttribute="bottom" secondItem="3m2-E6-ran" secondAttribute="bottom" id="SHq-sB-9VU"/>
+                <constraint firstItem="Dpu-nv-fQC" firstAttribute="trailing" secondItem="3m2-E6-ran" secondAttribute="trailing" id="W2f-jW-Lon"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Dpu-nv-fQC"/>
+            <connections>
+                <outlet property="activityIndicator" destination="ZI0-hz-1Lt" id="0SY-qv-5qf"/>
+                <outlet property="swirly" destination="ZI0-hz-1Lt" id="3ss-Pz-Dje"/>
+            </connections>
+            <point key="canvasLocation" x="-250" y="-68"/>
+        </view>
+    </objects>
+</document>

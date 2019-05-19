@@ -42,6 +42,31 @@ class BaseViewController: UIViewController {
         super.prepare(for: pSegue, sender: sender)
     }
     
+    // MARK:- Overlay set up
+    
+    var overlay: UIView?
+    
+    func showOverlay(show pShow: Bool = true) {
+        if pShow {
+            if self.overlay == nil {
+                self.overlay = ActivityOverlay.showActivityIndicatorOn(viewController: self)
+            }
+        } else {
+            if self.overlay != nil {
+                self.overlay?.removeFromSuperview()
+                self.overlay = nil
+            }
+        }
+    }
+    
+    var activityIndicatorOverlayFrame: CGRect {
+        var activityFrame = self.view.bounds
+        if let safeAreaInsets = UIApplication.shared.keyWindow?.safeAreaInsets {
+            activityFrame = activityFrame.inset(by: safeAreaInsets)
+        }
+        return activityFrame
+    }
+    
     // MARK:- TableView
     
     var tableViewArray: [[Any]] {
@@ -65,7 +90,11 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
         return self.tableViewArray[pSection].count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ pTableView: UITableView, didSelectRowAt pIndexPath: IndexPath) {
+        pTableView.deselectRow(at: pIndexPath, animated: true)
     }
 }
