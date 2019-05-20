@@ -73,7 +73,7 @@ class BaseViewController: UIViewController {
         return []
     }
     
-    func objectForIndexPath(indexPath pIndexpath: IndexPath) -> Any {
+    func itemForIndexPath(indexPath pIndexpath: IndexPath) -> Any {
         return self.tableViewArray[pIndexpath.section][pIndexpath.row]
     }
 }
