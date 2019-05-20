@@ -14,6 +14,8 @@
 		6194AF852290352600327D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6194AF832290352600327D7D /* Main.storyboard */; };
 		6194AF872290352700327D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6194AF862290352700327D7D /* Assets.xcassets */; };
 		6194AF8A2290352700327D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6194AF882290352700327D7D /* LaunchScreen.storyboard */; };
+		61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC0CE62293243600CBB359 /* SettingsCell.swift */; };
+		61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC0CE82293251700CBB359 /* SettingsViewController.swift */; };
 		61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4114E229161BE00FB1405 /* BaseViewController.swift */; };
 		61F411512291620200FB1405 /* UITableView+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F411502291620200FB1405 /* UITableView+QP.swift */; };
 		61F4115422916E5600FB1405 /* ActivtyOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F4115322916E5600FB1405 /* ActivtyOverlay.xib */; };
@@ -30,6 +32,8 @@
 		6194AF862290352700327D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6194AF892290352700327D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6194AF8B2290352700327D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61AC0CE62293243600CBB359 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		61AC0CE82293251700CBB359 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		61F4114E229161BE00FB1405 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		61F411502291620200FB1405 /* UITableView+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+QP.swift"; sourceTree = "<group>"; };
 		61F4115322916E5600FB1405 /* ActivtyOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivtyOverlay.xib; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				6178F06F22905479009D505F /* Settings.storyboard */,
+				61AC0CE82293251700CBB359 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				61F4115322916E5600FB1405 /* ActivtyOverlay.xib */,
 				61F4115522916F5200FB1405 /* ActivityOverlay.swift */,
+				61AC0CE62293243600CBB359 /* SettingsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 				6194AF802290352600327D7D /* AppDelegate.swift in Sources */,
 				61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */,
 				61F4115622916F5200FB1405 /* ActivityOverlay.swift in Sources */,
+				61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */,
+				61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
