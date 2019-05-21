@@ -10,19 +10,8 @@ import UIKit
 
 class SettingsViewController: BaseViewController {
     
-    // Might change it later
-    enum Identifiers {
-        case settingsCell, cellularDownloadCell
-        
-        var description: String {
-            switch self {
-            case .settingsCell:
-                return "SettingsCell"
-            case .cellularDownloadCell:
-                return "CellularDownloadCell"
-            }
-        }
-    }
+    private let settingsCell = "SettingsCell"
+    private let cellularDownloadCell =  "CellularDownloadCell"
     
     enum TableRow {
         case audioQuality, cellularDownload, aboutUs, shareApp, rateUs, contactUs
@@ -34,12 +23,22 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override var tableViewArray: [[Any]] {
-        return [self.tableRows]
+    override func viewWillAppear(_ pAnimated: Bool) {
+        super.viewWillAppear(pAnimated)
+        let reachabilityManager = ReachabilityManager()
+        reachabilityManager.checkForInternetConnection { (pAvailable) in
+            if !pAvailable {
+                return
+            }
+            // Checking both for now. Will restrict to cellular later
+            // TODO
+            print("Both Cellular and Wifi are available")
+        }
+        
     }
     
-    func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
-        return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
+    override var tableViewArray: [[Any]] {
+        return [self.tableRows]
     }
 }
 
@@ -70,7 +69,7 @@ extension SettingsViewController {
     }
     
     private func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: Identifiers.settingsCell.description, for: pIndexPath) as! SettingsCell
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
         switch pRow {
         case .audioQuality:
             cell.settingsLabel.text = "Audio Quality"
@@ -94,7 +93,11 @@ extension SettingsViewController {
     }
     
     private func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: Identifiers.cellularDownloadCell.description, for: pIndexPath)
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
         return cell
+    }
+    
+    func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
+        return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
     }
 }
