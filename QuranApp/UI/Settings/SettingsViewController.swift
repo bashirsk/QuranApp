@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: BaseViewController {
     
     // Might change it later
-    enum cellIdentifiers {
+    enum Identifiers {
         case settingsCell, cellularDownloadCell
         
         var description: String {
@@ -39,7 +39,7 @@ class SettingsViewController: BaseViewController {
     }
     
     func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
-        return itemForIndexPath(indexPath: pIndexpath) as! TableRow
+        return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
     }
 }
 
@@ -70,7 +70,7 @@ extension SettingsViewController {
     }
     
     private func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: cellIdentifiers.settingsCell.description, for: pIndexPath) as! SettingsCell
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: Identifiers.settingsCell.description, for: pIndexPath) as! SettingsCell
         switch pRow {
         case .audioQuality:
             cell.settingsLabel.text = "Audio Quality"
@@ -94,7 +94,7 @@ extension SettingsViewController {
     }
     
     private func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: cellIdentifiers.cellularDownloadCell.description, for: pIndexPath)
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: Identifiers.cellularDownloadCell.description, for: pIndexPath)
         return cell
     }
 }
