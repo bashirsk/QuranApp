@@ -81,7 +81,7 @@
                                             <outlet property="settingsLabel" destination="1wo-tU-sR5" id="Ozc-rH-E9d"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellularDownloadCell" rowHeight="65" id="lUd-Ba-gG7" customClass="SettingsCell" customModule="QuranApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellularDownloadCell" rowHeight="65" id="lUd-Ba-gG7" customClass="CellularDownloadCell" customModule="QuranApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="93" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lUd-Ba-gG7" id="1uT-Mi-LCQ">
@@ -102,9 +102,12 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O70-5b-cyT">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O70-5b-cyT">
                                                     <rect key="frame" x="310" y="17" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.074509803920000006" green="0.13725490200000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="downloadOverCellularTapped:" destination="lUd-Ba-gG7" eventType="valueChanged" id="9fO-rk-2Df"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -115,8 +118,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="settingsImage" destination="cwg-wh-cbH" id="2o1-R5-feY"/>
-                                            <outlet property="settingsLabel" destination="eyd-Zq-VSH" id="Yo7-93-3rr"/>
+                                            <outlet property="downloadOverCellularSwitch" destination="O70-5b-cyT" id="b67-2P-lfm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
