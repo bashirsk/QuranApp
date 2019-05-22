@@ -92,9 +92,5 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-    
-    func tableView(_ pTableView: UITableView, didSelectRowAt pIndexPath: IndexPath) {
-        pTableView.deselectRow(at: pIndexPath, animated: true)
-    }
+    }    
 }
