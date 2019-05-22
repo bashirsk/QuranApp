@@ -39,8 +39,8 @@ class SettingsViewController: BaseViewController {
     
     /**
      - Find subview from the superview's subviews
-     - Remove it
-     - Add it again
+     - Remove it form the superview
+     - Add it to the superview again
      - Then set a new constraint for it by centering it since it inherits one from the SettingsViewController in the Storyboard
      - Finally add it to the content view of the cell not the superview which is currently the stackView
      **/
