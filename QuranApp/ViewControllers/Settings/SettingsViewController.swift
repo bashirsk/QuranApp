@@ -37,6 +37,27 @@ class SettingsViewController: BaseViewController {
         }
     }
     
+    /**
+     - Find subview from the superview's subviews
+     - Remove it
+     - Add it again
+     - Then set a new constraint for it by centering it since it inherits one from the SettingsViewController in the Storyboard
+     - Finally add it to the content view of the cell not the superview which is currently the stackView
+     **/
+    func layoutCustomView(_ cell: SettingsCell) {
+        if let theSuperView = cell.settingsLabel.superview {
+            theSuperView.subviews.forEach {
+                $0.removeFromSuperview()
+                theSuperView.addSubview($0)
+                $0.translatesAutoresizingMaskIntoConstraints = false
+                let horizonalConstraint = $0.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor)
+                cell.contentView.addConstraint(horizonalConstraint)
+            }
+        }
+    }
+    
+    //MARK:- TableView Set Up
+    
     override var tableViewArray: [[Any]] {
         return [self.tableRows]
     }
@@ -44,7 +65,6 @@ class SettingsViewController: BaseViewController {
     func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
         return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
     }
-    
 }
 
 //MARK:- UITableViewDelegate, UITableViewDataSource
@@ -63,48 +83,6 @@ extension SettingsViewController {
         default:
             return self.entryCell(indexPath: pIndexPath, rowObject)
         }
-    }
-    
-    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
-        switch pRow {
-        case .audioQuality:
-            cell.settingsLabel.text = "Audio Quality"
-            cell.settingsImage.image = #imageLiteral(resourceName: "AudioQuality")
-        case .aboutUs:
-            cell.settingsLabel.text = "About us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "AboutUs")
-        case .shareApp:
-            cell.settingsLabel.text = "Share app"
-            cell.settingsImage.image = #imageLiteral(resourceName: "Share")
-        case .rateUs:
-            cell.settingsLabel.text = "Rate us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "RateUs")
-        case .contactUs:
-            cell.settingsLabel.text = "Contact us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "ContactUs")
-        case .streaming:
-            cell.settingsLabel.text = "Streaming"
-            cell.settingsImage.image = nil
-        case .automatic:
-            cell.settingsLabel.text = "Automatic (Recommended)"
-            cell.settingsImage.image = nil
-        case .high:
-            cell.settingsLabel.text = "High"
-            cell.settingsImage.image = nil
-        case .download:
-            cell.settingsLabel.text = "Download"
-            cell.settingsImage.image = nil
-        case .normal:
-            cell.settingsLabel.text = "Normal (Recommended)"
-            cell.settingsImage.image = nil
-        case .downloadHigh:
-            cell.settingsLabel.text = "High"
-            cell.settingsImage.image = nil
-        default:
-            break
-        }
-        return cell
     }
     
     func tableView(_ pTableView: UITableView, didSelectRowAt pIndexPath: IndexPath) {
@@ -130,4 +108,49 @@ extension SettingsViewController {
         }
         return cell
     }
+    
+    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
+        switch pRow {
+        case .audioQuality:
+            cell.settingsLabel.text = "Audio Quality"
+            cell.settingsImage.image = #imageLiteral(resourceName: "AudioQuality")
+        case .aboutUs:
+            cell.settingsLabel.text = "About us"
+            cell.settingsImage.image = #imageLiteral(resourceName: "AboutUs")
+        case .shareApp:
+            cell.settingsLabel.text = "Share app"
+            cell.settingsImage.image = #imageLiteral(resourceName: "Share")
+        case .rateUs:
+            cell.settingsLabel.text = "Rate us"
+            cell.settingsImage.image = #imageLiteral(resourceName: "RateUs")
+        case .contactUs:
+            cell.settingsLabel.text = "Contact us"
+            cell.settingsImage.image = #imageLiteral(resourceName: "ContactUs")
+        case .streaming:
+            cell.settingsLabel.text = "Streaming"
+            self.layoutCustomView(cell)
+            cell.settingsImage.image = nil
+        case .automatic:
+            cell.settingsLabel.text = "Automatic (Recommended)"
+            cell.settingsImage.image = nil
+        case .high:
+            cell.settingsLabel.text = "High"
+            cell.settingsImage.image = nil
+        case .download:
+            cell.settingsLabel.text = "Download"
+            self.layoutCustomView(cell)
+            cell.settingsImage.image = nil
+        case .normal:
+            cell.settingsLabel.text = "Normal (Recommended)"
+            cell.settingsImage.image = nil
+        case .downloadHigh:
+            cell.settingsLabel.text = "High"
+            cell.settingsImage.image = nil
+        default:
+            break
+        }
+        return cell
+    }
+    
 }
