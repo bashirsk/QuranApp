@@ -12,6 +12,7 @@ class SettingsViewController: BaseViewController {
     
     private let settingsCell = "SettingsCell"
     private let cellularDownloadCell =  "CellularDownloadCell"
+    let reachabilityManager = ReachabilityManager()
     
     enum TableRow {
         case audioQuality, cellularDownload, aboutUs, shareApp, rateUs, contactUs
@@ -23,9 +24,7 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ pAnimated: Bool) {
-        super.viewWillAppear(pAnimated)
-        let reachabilityManager = ReachabilityManager()
+    private func enableDownloadsOverCellular() {
         reachabilityManager.checkForInternetConnection { (pAvailable) in
             if !pAvailable {
                 return
@@ -34,7 +33,6 @@ class SettingsViewController: BaseViewController {
             // TODO
             print("Both Cellular and Wifi are available")
         }
-        
     }
     
     override var tableViewArray: [[Any]] {
@@ -50,7 +48,7 @@ extension SettingsViewController {
         return 1
     }
     
-    override func tableView(_ pTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ pTableView: UITableView, numberOfRowsInSection pSection: Int) -> Int {
         return self.tableRows.count
     }
     
@@ -94,6 +92,13 @@ extension SettingsViewController {
     
     private func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
+        cell.completion = { pIsOn in
+            // If is switch is turned off don't allow any downloads over cellular
+            if !pIsOn {
+                return
+            }
+            self.enableDownloadsOverCellular()
+        }
         return cell
     }
     

@@ -117,9 +117,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="O70-5b-cyT" secondAttribute="trailing" constant="16" id="fDX-dG-P5Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="downloadOverCellularSwitch" destination="O70-5b-cyT" id="b67-2P-lfm"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
