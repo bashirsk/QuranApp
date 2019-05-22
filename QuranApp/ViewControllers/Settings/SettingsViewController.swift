@@ -44,7 +44,7 @@ class SettingsViewController: BaseViewController {
      - Then set a new constraint for it by centering it since it inherits one from the SettingsViewController in the Storyboard
      - Finally add it to the content view of the cell not the superview which is currently the stackView
      **/
-    func centerViewInsideCell(_ cell: SettingsCell) {
+    func centerViewInCell(_ cell: SettingsCell) {
         if let theSuperView = cell.settingsLabel.superview {
             theSuperView.subviews.forEach {
                 $0.removeFromSuperview()
@@ -129,7 +129,7 @@ extension SettingsViewController {
             cell.settingsImage.image = #imageLiteral(resourceName: "ContactUs")
         case .streaming:
             cell.settingsLabel.text = "Streaming"
-            self.centerViewInsideCell(cell)
+            self.centerViewInCell(cell)
             cell.settingsImage.image = nil
         case .automatic:
             cell.settingsLabel.text = "Automatic (Recommended)"
@@ -139,7 +139,7 @@ extension SettingsViewController {
             cell.settingsImage.image = nil
         case .download:
             cell.settingsLabel.text = "Download"
-            self.centerViewInsideCell(cell)
+            self.centerViewInCell(cell)
             cell.settingsImage.image = nil
         case .normal:
             cell.settingsLabel.text = "Normal (Recommended)"
