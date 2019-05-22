@@ -10,9 +10,11 @@ import UIKit
 
 class CellularDownloadCell: UITableViewCell {
     
-    @IBOutlet weak var downloadOverCellularSwitch: UISwitch!
-    
-    @IBAction func downloadOverCellularTapped(_ sender: UISwitch) {
-        //TODO
+    var completion: ((Bool) -> Void)?
+        
+    @IBAction func downloadOverCellularTapped(_ pSender: UISwitch) {
+        if let switchAction = self.completion {
+            switchAction(pSender.isOn)
+        }
     }
 }
