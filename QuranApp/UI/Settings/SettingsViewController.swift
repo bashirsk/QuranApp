@@ -17,7 +17,7 @@ class SettingsViewController: BaseViewController {
         case audioQuality, cellularDownload, aboutUs, shareApp, rateUs, contactUs
     }
     
-    var tableRows: [TableRow] = [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
+    private var tableRows: [TableRow] = [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +46,19 @@ class SettingsViewController: BaseViewController {
 
 extension SettingsViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in pTableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ pTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tableRows.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ pTableView: UITableView, heightForRowAt pIndexPath: IndexPath) -> CGFloat {
         return 50
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
         let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .cellularDownload:
@@ -97,7 +97,7 @@ extension SettingsViewController {
         return cell
     }
     
-    func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
+    private func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
         return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
     }
 }
