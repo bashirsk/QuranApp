@@ -18,18 +18,18 @@ class BaseViewController: UIViewController {
         thisTableView.qp_setTableViewDelegate(with: self)
     }
     
-    // MARK:- UIViewController controls
+    // MARK:- UIViewController control set up
     
     func goAway(completion pCompletion: (() -> Void)? = nil) {
-        self.presentingViewController!.dismiss(animated: true, completion: pCompletion)
+        self.presentingViewController?.dismiss(animated: true, completion: pCompletion)
     }
     
     func pushViewController(with pViewController: UIViewController) {
-        self.navigationController!.pushViewController(pViewController, animated: true)
+        self.navigationController?.pushViewController(pViewController, animated: true)
     }
     
     func popViewController() {
-        self.navigationController!.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func presentViewController(_ pViewController: UIViewController, completion pCompletion: (() -> Void)? = nil) {
@@ -67,7 +67,7 @@ class BaseViewController: UIViewController {
         return activityFrame
     }
     
-    // MARK:- TableView
+    // MARK:- TableView set up
     
     var tableViewArray: [[Any]] {
         return []

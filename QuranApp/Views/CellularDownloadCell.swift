@@ -11,7 +11,7 @@ import UIKit
 class CellularDownloadCell: UITableViewCell {
     
     var completion: ((Bool) -> Void)?
-        
+    
     @IBAction func downloadOverCellularTapped(_ pSender: UISwitch) {
         if let switchAction = self.completion {
             switchAction(pSender.isOn)

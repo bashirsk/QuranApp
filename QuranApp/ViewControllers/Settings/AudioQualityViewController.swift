@@ -18,6 +18,8 @@ class AudioQualityViewController: SettingsViewController {
         self.tableview.separatorStyle = .none
     }
     
+    //MARK:- TableView Set Up
+    
     override var tableViewArray: [[Any]] {
         return [self.tableRow]
     }

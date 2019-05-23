@@ -37,25 +37,6 @@ class SettingsViewController: BaseViewController {
         }
     }
     
-    /**
-     - Find subview from the superview's subviews
-     - Remove it form the superview
-     - Add it to the superview again
-     - Then set a new constraint for it by centering it since it inherits one from the SettingsViewController in the Storyboard
-     - Finally add it to the content view of the cell not the superview which is currently the stackView
-     **/
-    func centerViewInCell(_ cell: SettingsCell) {
-        if let theSuperView = cell.settingsLabel.superview {
-            theSuperView.subviews.forEach {
-                $0.removeFromSuperview()
-                theSuperView.addSubview($0)
-                $0.translatesAutoresizingMaskIntoConstraints = false
-                let horizonalConstraint = $0.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor)
-                cell.contentView.addConstraint(horizonalConstraint)
-            }
-        }
-    }
-    
     //MARK:- TableView Set Up
     
     override var tableViewArray: [[Any]] {
@@ -64,6 +45,49 @@ class SettingsViewController: BaseViewController {
     
     func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
         return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
+    }
+    
+    func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
+        cell.completion = { pIsOn in
+            // If is switch is turned off don't allow any downloads over cellular
+            if !pIsOn {
+                return
+            }
+            self.enableDownloadsOverCellular()
+        }
+        return cell
+    }
+    
+    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
+        switch pRow {
+        case .audioQuality:
+            cell.fillWith(label: "Audio Quality", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "AudioQuality"))
+        case .aboutUs:
+            cell.fillWith(label: "About us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "AboutUs"))
+        case .shareApp:
+            cell.fillWith(label: "Share app", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "Share"))
+        case .rateUs:
+            cell.fillWith(label: "Rate us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "RateUs"))
+        case .contactUs:
+            cell.fillWith(label: "Contact us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "ContactUs"))
+        case .streaming:
+            cell.fillView(text: "Streaming")
+        case .automatic:
+            cell.fillWith(label: "Automatic (Recommended)", font: UIFont.qp_avenirNextRegular)
+        case .high:
+            cell.fillWith(label: "High", font: UIFont.qp_avenirNextRegular)
+        case .download:
+            cell.fillView(text: "Download")
+        case .normal:
+            cell.fillWith(label: "Normal (Recommended)", font: UIFont.qp_avenirNextRegular)
+        case .downloadHigh:
+            cell.fillWith(label: "High", font:UIFont.qp_avenirNextRegular)
+        default:
+            break
+        }
+        return cell
     }
 }
 
@@ -96,64 +120,4 @@ extension SettingsViewController {
             break
         }
     }
-    
-    func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
-        cell.completion = { pIsOn in
-            // If is switch is turned off don't allow any downloads over cellular
-            if !pIsOn {
-                return
-            }
-            self.enableDownloadsOverCellular()
-        }
-        return cell
-    }
-    
-    private func customCell(_ cell: SettingsCell, labelText: String) {
-        cell.settingsLabel.text = labelText
-        cell.settingsLabel.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
-        self.centerViewInCell(cell)
-        cell.settingsImage.image = nil
-    }
-    
-    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
-        switch pRow {
-        case .audioQuality:
-            cell.settingsLabel.text = "Audio Quality"
-            cell.settingsImage.image = #imageLiteral(resourceName: "AudioQuality")
-        case .aboutUs:
-            cell.settingsLabel.text = "About us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "AboutUs")
-        case .shareApp:
-            cell.settingsLabel.text = "Share app"
-            cell.settingsImage.image = #imageLiteral(resourceName: "Share")
-        case .rateUs:
-            cell.settingsLabel.text = "Rate us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "RateUs")
-        case .contactUs:
-            cell.settingsLabel.text = "Contact us"
-            cell.settingsImage.image = #imageLiteral(resourceName: "ContactUs")
-        case .streaming:
-            self.customCell(cell, labelText: "Streaming")
-        case .automatic:
-            cell.settingsLabel.text = "Automatic (Recommended)"
-            cell.settingsImage.image = nil
-        case .high:
-            cell.settingsLabel.text = "High"
-            cell.settingsImage.image = nil
-        case .download:
-            self.customCell(cell, labelText: "Download")
-        case .normal:
-            cell.settingsLabel.text = "Normal (Recommended)"
-            cell.settingsImage.image = nil
-        case .downloadHigh:
-            cell.settingsLabel.text = "High"
-            cell.settingsImage.image = nil
-        default:
-            break
-        }
-        return cell
-    }
-    
 }
