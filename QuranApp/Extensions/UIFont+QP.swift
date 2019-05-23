@@ -14,7 +14,7 @@ extension UIFont {
         return  UIFont(name: "AvenirNext-Medium", size: 20)
     }
     
-    static var qp_avenirNextRegular: UIFont? {
-        return UIFont(name: "AvenirNext-Regular", size: 16)
+    static func qp_avenirNextRegular(size pSize: CGFloat? = 16) -> UIFont? {
+        return UIFont(name: "AvenirNext-Regular", size: pSize!)
     }
 }

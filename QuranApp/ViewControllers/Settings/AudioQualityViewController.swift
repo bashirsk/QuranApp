@@ -10,7 +10,7 @@ import UIKit
 
 class AudioQualityViewController: SettingsViewController {
     
-    var tableRow: [TableRow] = [.streaming, .automatic, .high, .download, .normal, .downloadHigh]
+    var tableRow: [TableRow] = [.streaming, .automatic, .high, .streamingDescription, .download, .normal, .downloadHigh]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,22 @@ extension AudioQualityViewController {
     override func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
         let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
-        case .streaming, .automatic, .high, .download, .normal, .downloadHigh:
+        case .streaming, .automatic, .high, .streamingDescription, .download, .normal, .downloadHigh:
             return self.entryCell(indexPath: pIndexPath, rowObject)
         default:
             break
         }
         return UITableViewCell()
-    }    
+    }
+    
+    override func tableView(_ pTableView: UITableView, heightForRowAt pIndexPath: IndexPath) -> CGFloat {
+        let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
+        switch rowObject {
+        case .streamingDescription:
+            return 80
+        default:
+            break
+        }
+        return 50
+    }
 }

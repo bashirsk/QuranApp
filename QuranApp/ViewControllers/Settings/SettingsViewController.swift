@@ -16,7 +16,8 @@ class SettingsViewController: BaseViewController {
     let reachabilityManager = ReachabilityManager()
     
     enum TableRow {
-        case audioQuality, cellularDownload, aboutUs, shareApp, rateUs, contactUs, streaming, automatic, high, download, normal, downloadHigh
+        case audioQuality, cellularDownload, aboutUs, shareApp, rateUs, contactUs,
+        streaming, automatic, high, streamingDescription, download, normal, downloadHigh
     }
     
     var tableRows = [TableRow]()
@@ -50,7 +51,7 @@ class SettingsViewController: BaseViewController {
     func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
         cell.completion = { pIsOn in
-            // If is switch is turned off don't allow any downloads over cellular
+            // If is switch is turned off don't allow downloads over cellular
             if !pIsOn {
                 return
             }
@@ -63,27 +64,31 @@ class SettingsViewController: BaseViewController {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
         switch pRow {
         case .audioQuality:
-            cell.fillWith(label: "Audio Quality", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "AudioQuality"))
+            cell.fillWith(label: "Audio Quality", image: #imageLiteral(resourceName: "AudioQuality"))
         case .aboutUs:
-            cell.fillWith(label: "About us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "AboutUs"))
+            cell.fillWith(label: "About us", image: #imageLiteral(resourceName: "AboutUs"))
         case .shareApp:
-            cell.fillWith(label: "Share app", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "Share"))
+            cell.fillWith(label: "Share app", image: #imageLiteral(resourceName: "Share"))
         case .rateUs:
-            cell.fillWith(label: "Rate us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "RateUs"))
+            cell.fillWith(label: "Rate us", image: #imageLiteral(resourceName: "RateUs"))
         case .contactUs:
-            cell.fillWith(label: "Contact us", font: UIFont.qp_avenirNextRegular, image: #imageLiteral(resourceName: "ContactUs"))
+            cell.fillWith(label: "Contact us", image: #imageLiteral(resourceName: "ContactUs"))
         case .streaming:
             cell.fillView(text: "Streaming")
         case .automatic:
-            cell.fillWith(label: "Automatic (Recommended)", font: UIFont.qp_avenirNextRegular)
+            cell.fillWith(label: "Automatic (Recommended)")
         case .high:
-            cell.fillWith(label: "High", font: UIFont.qp_avenirNextRegular)
+            cell.fillWith(label: "High")
+        case .streamingDescription:
+            let description = "If your internet connection isn’t normally fast, please keep automatic setting selected so you can enjoy a better expericence"
+            cell.fillWith(label: description, lines: 0, font: UIFont.qp_avenirNextRegular(size: 13))
+            cell.addConstraintsToLabel()
         case .download:
             cell.fillView(text: "Download")
         case .normal:
-            cell.fillWith(label: "Normal (Recommended)", font: UIFont.qp_avenirNextRegular)
+            cell.fillWith(label: "Normal (Recommended)")
         case .downloadHigh:
-            cell.fillWith(label: "High", font:UIFont.qp_avenirNextRegular)
+            cell.fillWith(label: "High")
         default:
             break
         }
