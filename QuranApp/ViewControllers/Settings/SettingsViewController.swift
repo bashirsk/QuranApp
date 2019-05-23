@@ -109,6 +109,13 @@ extension SettingsViewController {
         return cell
     }
     
+    private func customCell(_ cell: SettingsCell, labelText: String) {
+        cell.settingsLabel.text = labelText
+        cell.settingsLabel.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
+        self.centerViewInCell(cell)
+        cell.settingsImage.image = nil
+    }
+    
     func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
         switch pRow {
@@ -128,9 +135,7 @@ extension SettingsViewController {
             cell.settingsLabel.text = "Contact us"
             cell.settingsImage.image = #imageLiteral(resourceName: "ContactUs")
         case .streaming:
-            cell.settingsLabel.text = "Streaming"
-            self.centerViewInCell(cell)
-            cell.settingsImage.image = nil
+            self.customCell(cell, labelText: "Streaming")
         case .automatic:
             cell.settingsLabel.text = "Automatic (Recommended)"
             cell.settingsImage.image = nil
@@ -138,9 +143,7 @@ extension SettingsViewController {
             cell.settingsLabel.text = "High"
             cell.settingsImage.image = nil
         case .download:
-            cell.settingsLabel.text = "Download"
-            self.centerViewInCell(cell)
-            cell.settingsImage.image = nil
+            self.customCell(cell, labelText: "Download")
         case .normal:
             cell.settingsLabel.text = "Normal (Recommended)"
             cell.settingsImage.image = nil
