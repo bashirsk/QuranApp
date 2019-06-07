@@ -12,7 +12,7 @@ class SettingsViewController: BaseViewController {
     
     private let settingsCell = "SettingsCell"
     private let cellularDownloadCell =  "CellularDownloadCell"
-    
+    var selectedIndexPath: IndexPath?
     let reachabilityManager = ReachabilityManager()
     
     enum TableRow {
@@ -24,7 +24,7 @@ class SettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableRows =  [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
+        tableRows =  [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
     }
     
     private func enableDownloadsOverCellular() {
@@ -41,15 +41,15 @@ class SettingsViewController: BaseViewController {
     //MARK:- TableView Set Up
     
     override var tableViewArray: [[Any]] {
-        return [self.tableRows]
+        return [tableRows]
     }
     
     func objectForIndexPath(indexPath pIndexpath: IndexPath) -> TableRow {
-        return self.itemForIndexPath(indexPath: pIndexpath) as! TableRow
+        return itemForIndexPath(indexPath: pIndexpath) as! TableRow
     }
     
     func cellularDownloadCell(indexPath pIndexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
+        let cell = tableview.dequeueReusableCell(withIdentifier: self.cellularDownloadCell, for: pIndexPath) as! CellularDownloadCell
         cell.completion = { pIsOn in
             // If is switch is turned off don't allow downloads over cellular
             if !pIsOn {
@@ -60,8 +60,8 @@ class SettingsViewController: BaseViewController {
         return cell
     }
     
-    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: self.settingsCell, for: pIndexPath) as! SettingsCell
+    // Set up all cells for both Settings an AudioQuality ViewControllers
+    private func setUpAllCells(_ pRow: TableRow, _ cell: SettingsCell, _ pIndexPath: IndexPath) {
         switch pRow {
         case .audioQuality:
             cell.fillWith(label: "Audio Quality", image: #imageLiteral(resourceName: "AudioQuality"))
@@ -74,24 +74,33 @@ class SettingsViewController: BaseViewController {
         case .contactUs:
             cell.fillWith(label: "Contact us", image: #imageLiteral(resourceName: "ContactUs"))
         case .streaming:
-            cell.fillView(text: "Streaming")
+            cell.fillViewInAudioViewController(text: "Streaming")
         case .automatic:
             cell.fillWith(label: "Automatic (Recommended)")
+            cell.checkMarkImage.isHidden = pIndexPath != selectedIndexPath
         case .high:
             cell.fillWith(label: "High")
+            cell.checkMarkImage.isHidden = pIndexPath != selectedIndexPath
         case .streamingDescription:
             let description = "If your internet connection isn’t normally fast, please keep automatic setting selected so you can enjoy a better expericence"
             cell.fillWith(label: description, lines: 0, font: UIFont.qp_avenirNextRegular(size: 13))
-            cell.addConstraintsToLabel()
+            cell.setUpConstraints()
         case .download:
-            cell.fillView(text: "Download")
+            cell.fillViewInAudioViewController(text: "Download")
         case .normal:
             cell.fillWith(label: "Normal (Recommended)")
+            cell.checkMarkImage.isHidden = pIndexPath != selectedIndexPath
         case .downloadHigh:
             cell.fillWith(label: "High")
+            cell.checkMarkImage.isHidden = pIndexPath != selectedIndexPath
         default:
             break
         }
+    }
+    
+    func entryCell(indexPath pIndexPath: IndexPath, _ pRow: TableRow) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: settingsCell, for: pIndexPath) as! SettingsCell
+        setUpAllCells(pRow, cell, pIndexPath)
         return cell
     }
 }
@@ -105,24 +114,26 @@ extension SettingsViewController {
     }
     
     override func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
-        let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
+        let rowObject = objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .cellularDownload:
-            return self.cellularDownloadCell(indexPath: pIndexPath)
+            return cellularDownloadCell(indexPath: pIndexPath)
         default:
-            return self.entryCell(indexPath: pIndexPath, rowObject)
+            return entryCell(indexPath: pIndexPath, rowObject)
         }
     }
     
     func tableView(_ pTableView: UITableView, didSelectRowAt pIndexPath: IndexPath) {
-        pTableView.deselectRow(at: pIndexPath, animated: true)
-        let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
+        selectedIndexPath = pIndexPath
+        pTableView.reloadData()
+        let rowObject = objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .audioQuality:
             let theViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "AudioQualityVC") as! AudioQualityViewController
-            self.navigationController?.pushViewController(theViewController, animated: true)
+            pushViewController(with: theViewController)
         default:
             break
         }
+        pTableView.deselectRow(at: pIndexPath, animated: true)
     }
 }

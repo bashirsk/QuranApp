@@ -13,36 +13,48 @@ class SettingsCell: UITableViewCell {
     @IBOutlet weak var settingsImage: UIImageView!
     @IBOutlet weak var settingsLabel: UILabel!
     
+    // Create checkmark image and add it to the cell programmatically
+    var checkMarkImage: UIImageView {
+        let checkMark = UIImageView()
+        checkMark.image = #imageLiteral(resourceName: "Tick")
+        checkMark.translatesAutoresizingMaskIntoConstraints = false
+        checkMark.contentMode = .scaleAspectFit
+        contentView.addSubview(checkMark)
+        checkMark.heightAnchor.constraint(equalToConstant: 19).isActive = true
+        checkMark.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        checkMark.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        checkMark.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
+        return checkMark
+    }
+    
     // Populate cell views
     func fillWith(label pLabel: String, lines pNumberOfLines: Int = 1, font pFont: UIFont? = UIFont.qp_avenirNextRegular(), image pImage: UIImage? = nil) {
-        self.settingsLabel.text = pLabel
-        self.settingsLabel.font = pFont
-        self.settingsImage.image = pImage
-        self.settingsLabel.numberOfLines = pNumberOfLines
+        settingsLabel.text = pLabel
+        settingsLabel.font = pFont
+        settingsImage.image = pImage
+        settingsLabel.numberOfLines = pNumberOfLines
     }
     
-    // Center Setting label
-    func centerLabel() {
-        self.settingsLabel.qp_removeAndaddView()
-        let horizonalConstraint = self.settingsLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
-        let topConstraint = self.settingsLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 12)
-        self.contentView.addConstraints([horizonalConstraint, topConstraint])
+    // Center Settings label
+    func setUpConstraintsForSettingsLabel() {
+        settingsLabel.qp_removeAndaddView()
+        settingsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        settingsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
     }
     
-    // Center an populate both download and streaming cells seperately
-    func fillView(text pText: String) {
-        self.centerLabel()
-        self.selectionStyle = .none
-        self.fillWith(label: pText, font: UIFont.qp_avenirNextMedium)
+    // Center and populate both download and streaming cells seperately
+    func fillViewInAudioViewController(text pText: String) {
+        setUpConstraintsForSettingsLabel()
+        selectionStyle = .none
+        fillWith(label: pText, font: UIFont.qp_avenirNextMedium)
     }
     
     // Populate Streaming description cell
-    func addConstraintsToLabel() {
-        self.settingsLabel.qp_removeAndaddView()
-        self.selectionStyle = .none
-        let leadingConstraint = self.settingsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
-        let trailingConstraint = self.settingsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 16)
-        let topConstraint = self.settingsLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 14)
-        self.contentView.addConstraints([leadingConstraint, trailingConstraint, topConstraint])
+    func setUpConstraints() {
+        settingsLabel.qp_removeAndaddView()
+        selectionStyle = .none
+        settingsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        settingsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 2).isActive = true
+        settingsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
     }
 }

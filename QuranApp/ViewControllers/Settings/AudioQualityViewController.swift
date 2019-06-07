@@ -14,14 +14,17 @@ class AudioQualityViewController: SettingsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableview.visibleCells.forEach { $0.accessoryType = .none }
-        self.tableview.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ pAnimated: Bool) {
+        super.viewWillAppear(pAnimated)
+        navigationController?.navigationBar.tintColor = .white
     }
     
     //MARK:- TableView Set Up
     
     override var tableViewArray: [[Any]] {
-        return [self.tableRow]
+        return [tableRow]
     }
 }
 
@@ -30,18 +33,18 @@ class AudioQualityViewController: SettingsViewController {
 extension AudioQualityViewController {
     
     override func tableView(_ pTableView: UITableView, cellForRowAt pIndexPath: IndexPath) -> UITableViewCell {
-        let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
+        let rowObject = objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .streaming, .automatic, .high, .streamingDescription, .download, .normal, .downloadHigh:
-            return self.entryCell(indexPath: pIndexPath, rowObject)
+            return entryCell(indexPath: pIndexPath, rowObject)
         default:
             break
         }
         return UITableViewCell()
     }
-    
+        
     override func tableView(_ pTableView: UITableView, heightForRowAt pIndexPath: IndexPath) -> CGFloat {
-        let rowObject = self.objectForIndexPath(indexPath: pIndexPath)
+        let rowObject = objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .streamingDescription:
             return 80
