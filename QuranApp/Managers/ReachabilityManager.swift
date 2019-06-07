@@ -13,7 +13,7 @@ final class ReachabilityManager: NSObject {
     let reachability = Reachability()!
     
     func checkForInternetConnection(completion pCompletion: @escaping (Bool) -> Void) {
-        self.reachability.whenReachable = { _ in
+        reachability.whenReachable = { _ in
             switch self.reachability.connection {
             case .wifi:
                 pCompletion(true)
@@ -29,7 +29,7 @@ final class ReachabilityManager: NSObject {
         
         // Start notifier 
         do {
-            try self.reachability.startNotifier()
+            try reachability.startNotifier()
         } catch {
             pCompletion(false)
         }
@@ -37,6 +37,6 @@ final class ReachabilityManager: NSObject {
     
     // Stop notifier
     deinit {
-        self.reachability.stopNotifier()
+        reachability.stopNotifier()
     }
 }

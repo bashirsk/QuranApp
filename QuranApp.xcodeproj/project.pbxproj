@@ -19,6 +19,9 @@
 		61BA5CA9229473E8004813C0 /* CellularDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA5CA8229473E8004813C0 /* CellularDownloadCell.swift */; };
 		61BA5CAB22947A83004813C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA5CAA22947A83004813C0 /* Reachability.swift */; };
 		61E5A7882294831B0093AEB6 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5A7872294831B0093AEB6 /* ReachabilityManager.swift */; };
+		61E89BCA2295D289001607B1 /* AudioQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E89BC92295D289001607B1 /* AudioQualityViewController.swift */; };
+		61E89BCF22960568001607B1 /* UIView+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E89BCE22960568001607B1 /* UIView+QP.swift */; };
+		61E89BD1229720E1001607B1 /* UIFont+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E89BD0229720E1001607B1 /* UIFont+QP.swift */; };
 		61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4114E229161BE00FB1405 /* BaseViewController.swift */; };
 		61F411512291620200FB1405 /* UITableView+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F411502291620200FB1405 /* UITableView+QP.swift */; };
 		61F4115422916E5600FB1405 /* ActivtyOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F4115322916E5600FB1405 /* ActivtyOverlay.xib */; };
@@ -40,6 +43,9 @@
 		61BA5CA8229473E8004813C0 /* CellularDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularDownloadCell.swift; sourceTree = "<group>"; };
 		61BA5CAA22947A83004813C0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		61E5A7872294831B0093AEB6 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		61E89BC92295D289001607B1 /* AudioQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQualityViewController.swift; sourceTree = "<group>"; };
+		61E89BCE22960568001607B1 /* UIView+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+QP.swift"; sourceTree = "<group>"; };
+		61E89BD0229720E1001607B1 /* UIFont+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+QP.swift"; sourceTree = "<group>"; };
 		61F4114E229161BE00FB1405 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		61F411502291620200FB1405 /* UITableView+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+QP.swift"; sourceTree = "<group>"; };
 		61F4115322916E5600FB1405 /* ActivtyOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivtyOverlay.xib; sourceTree = "<group>"; };
@@ -73,22 +79,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		6178F0612290412B009D505F /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				6178F069229049C3009D505F /* Search */,
-				6178F068229049BD009D505F /* Downloads */,
-				6178F067229049B5009D505F /* Home */,
-				6178F0622290413D009D505F /* Settings */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		6178F0622290413D009D505F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				6178F06F22905479009D505F /* Settings.storyboard */,
 				61AC0CE82293251700CBB359 /* SettingsViewController.swift */,
+				61E89BC92295D289001607B1 /* AudioQualityViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -114,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				61F411502291620200FB1405 /* UITableView+QP.swift */,
+				61E89BCE22960568001607B1 /* UIView+QP.swift */,
+				61E89BD0229720E1001607B1 /* UIFont+QP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				6178F0602290411E009D505F /* Models */,
-				6178F0612290412B009D505F /* UI */,
+				61E89BCD2295F27D001607B1 /* ViewControllers */,
 				61F4115222916E2600FB1405 /* Views */,
 				6178F06422904171009D505F /* Managers */,
 				6178F06522904179009D505F /* Extensions */,
@@ -181,6 +179,17 @@
 				6194AF8B2290352700327D7D /* Info.plist */,
 			);
 			path = QuranApp;
+			sourceTree = "<group>";
+		};
+		61E89BCD2295F27D001607B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6178F069229049C3009D505F /* Search */,
+				6178F068229049BD009D505F /* Downloads */,
+				6178F067229049B5009D505F /* Home */,
+				6178F0622290413D009D505F /* Settings */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		61F4115222916E2600FB1405 /* Views */ = {
@@ -226,6 +235,7 @@
 				TargetAttributes = {
 					6194AF7B2290352600327D7D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -272,11 +282,14 @@
 				61F411512291620200FB1405 /* UITableView+QP.swift in Sources */,
 				61BA5CA9229473E8004813C0 /* CellularDownloadCell.swift in Sources */,
 				6194AF802290352600327D7D /* AppDelegate.swift in Sources */,
+				61E89BD1229720E1001607B1 /* UIFont+QP.swift in Sources */,
+				61E89BCF22960568001607B1 /* UIView+QP.swift in Sources */,
 				61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */,
 				61E5A7882294831B0093AEB6 /* ReachabilityManager.swift in Sources */,
 				61F4115622916F5200FB1405 /* ActivityOverlay.swift in Sources */,
 				61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */,
 				61BA5CAB22947A83004813C0 /* Reachability.swift in Sources */,
+				61E89BCA2295D289001607B1 /* AudioQualityViewController.swift in Sources */,
 				61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BashirskLLC.QuranApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,7 +481,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BashirskLLC.QuranApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
