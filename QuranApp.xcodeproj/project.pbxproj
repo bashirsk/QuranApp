@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6107571F22B0256500D5EB2F /* UIAlertController+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */; };
 		6178F06C22905422009D505F /* Downloads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06A22905422009D505F /* Downloads.storyboard */; };
 		6178F06E22905441009D505F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06D22905441009D505F /* Search.storyboard */; };
 		6178F07122905479009D505F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06F22905479009D505F /* Settings.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QP.swift"; sourceTree = "<group>"; };
 		6178F06B22905422009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Downloads.storyboard; sourceTree = "<group>"; };
 		6178F06D22905441009D505F /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		6178F07022905479009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				61F411502291620200FB1405 /* UITableView+QP.swift */,
 				61E89BCE22960568001607B1 /* UIView+QP.swift */,
 				61E89BD0229720E1001607B1 /* UIFont+QP.swift */,
+				6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				61F411512291620200FB1405 /* UITableView+QP.swift in Sources */,
 				61BA5CA9229473E8004813C0 /* CellularDownloadCell.swift in Sources */,
 				6194AF802290352600327D7D /* AppDelegate.swift in Sources */,
+				6107571F22B0256500D5EB2F /* UIAlertController+QP.swift in Sources */,
 				61E89BD1229720E1001607B1 /* UIFont+QP.swift in Sources */,
 				61E89BCF22960568001607B1 /* UIView+QP.swift in Sources */,
 				61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */,
