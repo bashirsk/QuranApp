@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingsViewController: BaseViewController {
     
@@ -131,9 +132,30 @@ extension SettingsViewController {
         case .audioQuality:
             let theViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "AudioQualityVC") as! AudioQualityViewController
             pushViewController(with: theViewController)
+        case .contactUs:
+            sendEmail()
         default:
             break
         }
         pTableView.deselectRow(at: pIndexPath, animated: true)
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["bashirsk23@gmail.com"])
+            mail.setMessageBody("Write here", isHTML: false)
+            present(mail, animated: true)
+        } else {
+            UIAlertController.qp_showAlert(title: "Oops", message: "Can't send email", from: self)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }
