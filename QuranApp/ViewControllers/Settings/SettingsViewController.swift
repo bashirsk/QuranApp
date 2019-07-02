@@ -21,10 +21,11 @@ class SettingsViewController: BaseViewController {
         streaming, automatic, high, streamingDescription, download, normal, downloadHigh
     }
     
-    var tableRows: [TableRow] = [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
+    var tableRows = [TableRow]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableRows =  [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
     }
     
     private func enableDownloadsOverCellular() {
@@ -67,6 +68,8 @@ class SettingsViewController: BaseViewController {
             cell.fillWith(label: "Audio Quality", image: #imageLiteral(resourceName: "AudioQuality"))
         case .aboutUs:
             cell.fillWith(label: "About us", image: #imageLiteral(resourceName: "AboutUs"))
+        case .shareApp:
+            cell.fillWith(label: "Share app", image: #imageLiteral(resourceName: "Share"))
         case .rateUs:
             cell.fillWith(label: "Rate us", image: #imageLiteral(resourceName: "RateUs"))
         case .contactUs:
