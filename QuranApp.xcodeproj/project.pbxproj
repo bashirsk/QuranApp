@@ -27,6 +27,9 @@
 		61F411512291620200FB1405 /* UITableView+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F411502291620200FB1405 /* UITableView+QP.swift */; };
 		61F4115422916E5600FB1405 /* ActivtyOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F4115322916E5600FB1405 /* ActivtyOverlay.xib */; };
 		61F4115622916F5200FB1405 /* ActivityOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4115522916F5200FB1405 /* ActivityOverlay.swift */; };
+		6834C68D22CB6E34009BB2DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C68C22CB6E34009BB2DA /* HomeViewController.swift */; };
+		6834C68F22CB6EF0009BB2DA /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C68E22CB6EF0009BB2DA /* HomeCollectionCell.swift */; };
+		6834C69122CB8969009BB2DA /* String+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C69022CB8969009BB2DA /* String+QP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		61F411502291620200FB1405 /* UITableView+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+QP.swift"; sourceTree = "<group>"; };
 		61F4115322916E5600FB1405 /* ActivtyOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivtyOverlay.xib; sourceTree = "<group>"; };
 		61F4115522916F5200FB1405 /* ActivityOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverlay.swift; sourceTree = "<group>"; };
+		6834C68C22CB6E34009BB2DA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6834C68E22CB6EF0009BB2DA /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
+		6834C69022CB8969009BB2DA /* String+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QP.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +78,6 @@
 				6194AF882290352700327D7D /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6178F0602290411E009D505F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		6178F0622290413D009D505F /* Settings */ = {
@@ -115,6 +114,7 @@
 				61E89BCE22960568001607B1 /* UIView+QP.swift */,
 				61E89BD0229720E1001607B1 /* UIFont+QP.swift */,
 				6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */,
+				6834C69022CB8969009BB2DA /* String+QP.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -129,6 +129,7 @@
 		6178F067229049B5009D505F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6834C68C22CB6E34009BB2DA /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -169,7 +170,6 @@
 		6194AF7E2290352600327D7D /* QuranApp */ = {
 			isa = PBXGroup;
 			children = (
-				6178F0602290411E009D505F /* Models */,
 				61E89BCD2295F27D001607B1 /* ViewControllers */,
 				61F4115222916E2600FB1405 /* Views */,
 				6178F06422904171009D505F /* Managers */,
@@ -202,6 +202,7 @@
 				61F4115522916F5200FB1405 /* ActivityOverlay.swift */,
 				61AC0CE62293243600CBB359 /* SettingsCell.swift */,
 				61BA5CA8229473E8004813C0 /* CellularDownloadCell.swift */,
+				6834C68E22CB6EF0009BB2DA /* HomeCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,9 +290,12 @@
 				61E89BD1229720E1001607B1 /* UIFont+QP.swift in Sources */,
 				61E89BCF22960568001607B1 /* UIView+QP.swift in Sources */,
 				61F4114F229161BE00FB1405 /* BaseViewController.swift in Sources */,
+				6834C68F22CB6EF0009BB2DA /* HomeCollectionCell.swift in Sources */,
 				61E5A7882294831B0093AEB6 /* ReachabilityManager.swift in Sources */,
+				6834C69122CB8969009BB2DA /* String+QP.swift in Sources */,
 				61F4115622916F5200FB1405 /* ActivityOverlay.swift in Sources */,
 				61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */,
+				6834C68D22CB6E34009BB2DA /* HomeViewController.swift in Sources */,
 				61BA5CAB22947A83004813C0 /* Reachability.swift in Sources */,
 				61E89BCA2295D289001607B1 /* AudioQualityViewController.swift in Sources */,
 				61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */,
