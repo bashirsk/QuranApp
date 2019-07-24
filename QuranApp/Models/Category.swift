@@ -22,7 +22,7 @@ class Category: Decodable {
     // Read data from Plist
     class var readDataFromPlist: [Category] {
         var theResults: [Category] = []
-        let url = Bundle.main.url(forResource: "Category", withExtension: "plist")!
+        guard let url = Bundle.main.url(forResource: "Category", withExtension: "plist") else { return [] }
         let data = try! Data(contentsOf: url)
         do {
             let results = try PropertyListDecoder().decode([Category].self, from: data)
