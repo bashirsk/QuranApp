@@ -12,6 +12,7 @@ class CellularDownloadCell: UITableViewCell {
     
     var completion: ((Bool) -> Void)?
     
+    // Turn on or off celluar data download
     @IBAction func downloadOverCellularTapped(_ pSender: UISwitch) {
         if let switchAction = completion {
             switchAction(pSender.isOn)

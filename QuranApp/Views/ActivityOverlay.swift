@@ -12,6 +12,7 @@ class ActivityOverlay: UIView {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // Load Overlay from Nib
     class func showActivityIndicatorOn(viewController pViewController: BaseViewController) -> UIView {
         let activityOverlay = Bundle.main.loadNibNamed("ActivityOverlay", owner: self, options: nil)?.first as! ActivityOverlay
         activityOverlay.frame = pViewController.activityIndicatorOverlayFrame

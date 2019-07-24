@@ -20,6 +20,7 @@ extension UIView {
         }
     }
     
+    // Add rounded corners, border width and color
     func qp_addRoundRectBorderWithColour(_ pColour: UIColor, width pWidth: CGFloat = 2.0, radius pRadius: CGFloat = 8.0) {
         layer.borderWidth = pWidth
         layer.cornerRadius = pRadius

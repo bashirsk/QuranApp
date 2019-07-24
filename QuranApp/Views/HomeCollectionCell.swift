@@ -16,7 +16,7 @@ class HomeCollectionCell: UICollectionViewCell {
     var category: Category! {
         didSet {
             categoryNameLabel.text = category.categoryName
-            categoryImageView.image = UIImage(named: category.image)
+            categoryImageView.image = UIImage(named: category.categoryImage)
         }
     }
     

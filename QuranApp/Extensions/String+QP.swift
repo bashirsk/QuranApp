@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     
+    // Capitalize the first letter in the string
     var qp_capitalizeFirstLetter: String {
         return self.capitalized
     }

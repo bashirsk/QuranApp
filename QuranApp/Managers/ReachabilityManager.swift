@@ -12,6 +12,7 @@ final class ReachabilityManager: NSObject {
     
     let reachability = Reachability()!
     
+    // Check for internet connection. Both Mobile and Wifi 
     func checkForInternetConnection(completion pCompletion: @escaping (Bool) -> Void) {
         reachability.whenReachable = { _ in
             switch self.reachability.connection {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6107571F22B0256500D5EB2F /* UIAlertController+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */; };
+		6164BBE222E8B29E00152370 /* Category.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6164BBE122E8B29E00152370 /* Category.plist */; };
+		6164BBE422E8BB2400152370 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164BBE322E8BB2400152370 /* Category.swift */; };
 		6178F06C22905422009D505F /* Downloads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06A22905422009D505F /* Downloads.storyboard */; };
 		6178F06E22905441009D505F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06D22905441009D505F /* Search.storyboard */; };
 		6178F07122905479009D505F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06F22905479009D505F /* Settings.storyboard */; };
@@ -18,7 +20,6 @@
 		61A41A4C22E87FE500EDF679 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A41A4B22E87FE500EDF679 /* HomeViewController.swift */; };
 		61A41A4E22E8805000EDF679 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A41A4D22E8805000EDF679 /* HomeCollectionCell.swift */; };
 		61A41A5022E881ED00EDF679 /* String+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A41A4F22E881ED00EDF679 /* String+QP.swift */; };
-		61A41A5222E89E4A00EDF679 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A41A5122E89E4A00EDF679 /* Categories.swift */; };
 		61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC0CE62293243600CBB359 /* SettingsCell.swift */; };
 		61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC0CE82293251700CBB359 /* SettingsViewController.swift */; };
 		61BA5CA9229473E8004813C0 /* CellularDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA5CA8229473E8004813C0 /* CellularDownloadCell.swift */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QP.swift"; sourceTree = "<group>"; };
+		6164BBE122E8B29E00152370 /* Category.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Category.plist; sourceTree = "<group>"; };
+		6164BBE322E8BB2400152370 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6178F06B22905422009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Downloads.storyboard; sourceTree = "<group>"; };
 		6178F06D22905441009D505F /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		6178F07022905479009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		61A41A4B22E87FE500EDF679 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		61A41A4D22E8805000EDF679 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		61A41A4F22E881ED00EDF679 /* String+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QP.swift"; sourceTree = "<group>"; };
-		61A41A5122E89E4A00EDF679 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Categories.swift; path = QuranApp/Extensions/Categories.swift; sourceTree = SOURCE_ROOT; };
 		61AC0CE62293243600CBB359 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		61AC0CE82293251700CBB359 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		61BA5CA8229473E8004813C0 /* CellularDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularDownloadCell.swift; sourceTree = "<group>"; };
@@ -85,7 +87,7 @@
 		6178F0602290411E009D505F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				61A41A5122E89E4A00EDF679 /* Categories.swift */,
+				6164BBE322E8BB2400152370 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +185,7 @@
 				6194AF832290352600327D7D /* Main.storyboard */,
 				6178F05F2290410E009D505F /* Supporting Files */,
 				6194AF8B2290352700327D7D /* Info.plist */,
+				6164BBE122E8B29E00152370 /* Category.plist */,
 			);
 			path = QuranApp;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6164BBE222E8B29E00152370 /* Category.plist in Resources */,
 				6194AF8A2290352700327D7D /* LaunchScreen.storyboard in Resources */,
 				61F4115422916E5600FB1405 /* ActivtyOverlay.xib in Resources */,
 				6194AF872290352700327D7D /* Assets.xcassets in Resources */,
@@ -290,7 +294,7 @@
 				61BA5CA9229473E8004813C0 /* CellularDownloadCell.swift in Sources */,
 				6194AF802290352600327D7D /* AppDelegate.swift in Sources */,
 				6107571F22B0256500D5EB2F /* UIAlertController+QP.swift in Sources */,
-				61A41A5222E89E4A00EDF679 /* Categories.swift in Sources */,
+				6164BBE422E8BB2400152370 /* Category.swift in Sources */,
 				61E89BD1229720E1001607B1 /* UIFont+QP.swift in Sources */,
 				61A41A4C22E87FE500EDF679 /* HomeViewController.swift in Sources */,
 				61E89BCF22960568001607B1 /* UIView+QP.swift in Sources */,

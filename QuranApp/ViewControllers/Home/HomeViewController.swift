@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        categories = Category.getCategories
+        categories = Category.readDataFromPlist
     }
 }
 

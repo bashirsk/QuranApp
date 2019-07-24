@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>categoryImage</key>
+		<string>Reciters</string>
+		<key>categoryName</key>
+		<string>Reciters</string>
+	</dict>
+	<dict>
+		<key>categoryImage</key>
+		<string>Suras</string>
+		<key>categoryName</key>
+		<string>Suras</string>
+	</dict>
+	<dict>
+		<key>categoryImage</key>
+		<string>Quran</string>
+		<key>categoryName</key>
+		<string>Quran</string>
+	</dict>
+	<dict>
+		<key>categoryImage</key>
+		<string>LiveRadio</string>
+		<key>categoryName</key>
+		<string>LiveRadio</string>
+	</dict>
+	<dict>
+		<key>categoryImage</key>
+		<string>Quran</string>
+		<key>categoryName</key>
+		<string>Quran</string>
+	</dict>
+	<dict>
+		<key>categoryImage</key>
+		<string>Podcasts</string>
+		<key>categoryName</key>
+		<string>Podcasts</string>
+	</dict>
+</array>
+</plist>
