@@ -25,7 +25,7 @@ class SettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableRows =  [.audioQuality, .cellularDownload, .aboutUs, .shareApp, .rateUs, .contactUs]
+        tableRows =  [.audioQuality, .cellularDownload, .contactUs]
     }
     
     private func enableDownloadsOverCellular() {
@@ -35,7 +35,6 @@ class SettingsViewController: BaseViewController {
             }
             // Checking both for now. Will restrict to cellular later
             // TODO
-            print("Both Cellular and Wifi are available")
         }
     }
     
@@ -66,12 +65,6 @@ class SettingsViewController: BaseViewController {
         switch pRow {
         case .audioQuality:
             cell.fillWith(label: "Audio Quality", image: #imageLiteral(resourceName: "AudioQuality"))
-        case .aboutUs:
-            cell.fillWith(label: "About us", image: #imageLiteral(resourceName: "AboutUs"))
-        case .shareApp:
-            cell.fillWith(label: "Share app", image: #imageLiteral(resourceName: "Share"))
-        case .rateUs:
-            cell.fillWith(label: "Rate us", image: #imageLiteral(resourceName: "RateUs"))
         case .contactUs:
             cell.fillWith(label: "Contact us", image: #imageLiteral(resourceName: "ContactUs"))
         case .streaming:
