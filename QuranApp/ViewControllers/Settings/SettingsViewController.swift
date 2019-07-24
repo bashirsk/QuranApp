@@ -21,12 +21,11 @@ class SettingsViewController: BaseViewController {
         streaming, automatic, high, streamingDescription, download, normal, downloadHigh
     }
     
-    var tableRows = [TableRow]()
+    var tableRows: [TableRow] = [.audioQuality, .cellularDownload, .contactUs]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableRows =  [.audioQuality, .cellularDownload, .contactUs]
-    }
+     }
     
     private func enableDownloadsOverCellular() {
         reachabilityManager.checkForInternetConnection { (pAvailable) in
@@ -66,7 +65,7 @@ class SettingsViewController: BaseViewController {
         case .audioQuality:
             cell.fillWith(label: "Audio Quality", image: #imageLiteral(resourceName: "AudioQuality"))
         case .contactUs:
-            cell.fillWith(label: "Contact us", image: #imageLiteral(resourceName: "ContactUs"))
+            cell.fillWith(label: "Contact Us", image: #imageLiteral(resourceName: "ContactUs"))
         case .streaming:
             cell.fillViewInAudioViewController(text: "Streaming")
         case .automatic:
@@ -120,6 +119,7 @@ extension SettingsViewController {
     func tableView(_ pTableView: UITableView, didSelectRowAt pIndexPath: IndexPath) {
         selectedIndexPath = pIndexPath
         pTableView.reloadData()
+        
         let rowObject = objectForIndexPath(indexPath: pIndexPath)
         switch rowObject {
         case .audioQuality:

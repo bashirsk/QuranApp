@@ -13,14 +13,70 @@
         <!--HomeViewController-->
         <scene sceneID="ZOT-44-R8f">
             <objects>
-                <viewController title="HomeViewController" id="uN5-Yf-B7K" sceneMemberID="viewController">
+                <viewController title="HomeViewController" id="uN5-Yf-B7K" customClass="HomeViewController" customModule="QuranApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ttN-M4-GUQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-44-WCY">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EzY-yy-yQG">
+                                    <size key="itemSize" width="141" height="207"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoriesCell" id="KL5-Rx-fO6" customClass="HomeCollectionCell" customModule="QuranApp" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="141" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="141" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quran" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-eI-5gx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="170"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="170" id="3w6-2S-SD9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnv-OI-keJ">
+                                                    <rect key="frame" x="17.5" y="178" width="106" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kRs-eI-5gx" secondAttribute="trailing" id="7rO-Gz-U8N"/>
+                                            <constraint firstItem="kRs-eI-5gx" firstAttribute="leading" secondItem="KL5-Rx-fO6" secondAttribute="leading" id="CRe-bR-DS3"/>
+                                            <constraint firstItem="wnv-OI-keJ" firstAttribute="top" secondItem="kRs-eI-5gx" secondAttribute="bottom" constant="8" id="HuH-jZ-wub"/>
+                                            <constraint firstItem="wnv-OI-keJ" firstAttribute="centerX" secondItem="KL5-Rx-fO6" secondAttribute="centerX" id="KBg-Kw-2Co"/>
+                                            <constraint firstItem="kRs-eI-5gx" firstAttribute="top" secondItem="KL5-Rx-fO6" secondAttribute="top" id="hmP-f9-tT5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="categoryImageView" destination="kRs-eI-5gx" id="hsh-4h-StE"/>
+                                            <outlet property="categoryNameLabel" destination="wnv-OI-keJ" id="UMe-ve-qp5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bpS-44-WCY" firstAttribute="bottom" secondItem="0BA-Cv-aE1" secondAttribute="bottom" id="Fpo-BB-nGT"/>
+                            <constraint firstItem="bpS-44-WCY" firstAttribute="top" secondItem="0BA-Cv-aE1" secondAttribute="top" id="U6z-Yr-KFC"/>
+                            <constraint firstItem="bpS-44-WCY" firstAttribute="leading" secondItem="0BA-Cv-aE1" secondAttribute="leading" id="VKB-nL-0gk"/>
+                            <constraint firstItem="bpS-44-WCY" firstAttribute="trailing" secondItem="0BA-Cv-aE1" secondAttribute="trailing" id="mzi-2C-yZm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0BA-Cv-aE1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="0gc-Ie-gGC"/>
+                    <connections>
+                        <outlet property="collectionView" destination="bpS-44-WCY" id="b07-3F-UIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xI8-sL-zL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,12 +142,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="twZ-wv-XaU">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.074509803920000006" green="0.13725490200000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -106,6 +162,7 @@
     </scenes>
     <resources>
         <image name="Home" width="26" height="26"/>
+        <image name="Quran" width="212" height="141"/>
     </resources>
     <color key="tintColor" red="0.074509803921568626" green="0.13725490196078433" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

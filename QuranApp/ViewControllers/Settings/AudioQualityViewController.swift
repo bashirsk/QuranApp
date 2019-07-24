@@ -28,7 +28,7 @@ class AudioQualityViewController: SettingsViewController {
     }
 }
 
-//MARK:- UITableViewDelegate, UITableViewDataSource
+//MARK:- UITableViewDelegate
 
 extension AudioQualityViewController {
     

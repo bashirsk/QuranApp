@@ -19,4 +19,16 @@ extension UIView {
             }
         }
     }
+    
+    func qp_addRoundRectBorderWithColour(_ pColour: UIColor, width pWidth: CGFloat = 2.0, radius pRadius: CGFloat = 8.0) {
+        layer.borderWidth = pWidth
+        layer.cornerRadius = pRadius
+        layer.borderColor = pColour.cgColor
+        clipsToBounds = true
+    }
+    
+    func qp_addCornerRadius(_ pRadius: CGFloat = -1) {
+        let radiusValue = (pRadius == -1) ? frame.height / 2 : pRadius
+        layer.cornerRadius = radiusValue
+    }
 }
