@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6107571F22B0256500D5EB2F /* UIAlertController+QP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */; };
+		611320342322284500E24263 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611320332322284500E24263 /* UserDefaultsManager.swift */; };
 		6164BBE222E8B29E00152370 /* Category.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6164BBE122E8B29E00152370 /* Category.plist */; };
 		6164BBE422E8BB2400152370 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164BBE322E8BB2400152370 /* Category.swift */; };
 		6178F06C22905422009D505F /* Downloads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6178F06A22905422009D505F /* Downloads.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		6107571E22B0256500D5EB2F /* UIAlertController+QP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QP.swift"; sourceTree = "<group>"; };
+		611320332322284500E24263 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		6164BBE122E8B29E00152370 /* Category.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Category.plist; sourceTree = "<group>"; };
 		6164BBE322E8BB2400152370 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6178F06B22905422009D505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QuranApp/Base.lproj/Downloads.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				61BA5CAA22947A83004813C0 /* Reachability.swift */,
 				61E5A7872294831B0093AEB6 /* ReachabilityManager.swift */,
+				611320332322284500E24263 /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				61A41A4E22E8805000EDF679 /* HomeCollectionCell.swift in Sources */,
 				61AC0CE72293243600CBB359 /* SettingsCell.swift in Sources */,
 				61BA5CAB22947A83004813C0 /* Reachability.swift in Sources */,
+				611320342322284500E24263 /* UserDefaultsManager.swift in Sources */,
 				61A41A5022E881ED00EDF679 /* String+QP.swift in Sources */,
 				61E89BCA2295D289001607B1 /* AudioQualityViewController.swift in Sources */,
 				61AC0CE92293251700CBB359 /* SettingsViewController.swift in Sources */,
